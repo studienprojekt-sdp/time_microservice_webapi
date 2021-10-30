@@ -5,8 +5,13 @@ const app = express();
 const port = 3000;
 
 app.listen(port, () => {
-  console.log("Listening at http://localhost:" + port);
+  console.log("Listening at port:" + port);
 });
+
+app.get("/", function(req, res) {
+  res.send("Hello World");
+});
+
 
 app.get("/api/timezone/tz=:timezone(*)", function(req, res) { // the (*) is important, otherwise express will think "/" in the timezone (e.g. in Europe/Berlin) is another route
   const timezone = req.params.timezone; // the timezone that is passed via the URL
