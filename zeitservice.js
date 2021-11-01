@@ -1,15 +1,15 @@
-const axios = require("axios"); // using axios to handle the http request
-const express = require("express"); // express for building the web app
+const axios = require("axios"); 
+const express = require("express"); 
 const app = express();
 
-const port = 3000;
+const port = 4000;
 
 app.listen(port, () => {
   console.log("Listening at port:" + port);
 });
 
-app.get("/api/timezone/tz=:timezone(*)", function(req, res) { // the (*) is important, otherwise express will think "/" in the timezone (e.g. in Europe/Berlin) is another route
-  const timezone = req.params.timezone; // the timezone that is passed via the URL
+app.get("/api/timezone/", function(req, res) {
+  const timezone = req.query.tz;
   const requestURL = "https://api.ipgeolocation.io/timezone?apiKey=59149b3287fd4d55b0d992b9cf2924ea&tz=" + timezone;
 
   var config = {
