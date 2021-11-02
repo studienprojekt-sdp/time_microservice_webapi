@@ -3,7 +3,7 @@
     "version": "1.1.0",
     "description": "returns the current local time or the time for a specific timezone in ISO-8601 format",
     "author": "Jan Heuck / https://github.com/jnhck",
-    "main": "/app/zeitservice.js",
+    "main": "/app/app.js",
     "dependencies": {
         "axios": "^0.21.1",
         "express": "^4.17.1"

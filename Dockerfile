@@ -13,7 +13,7 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-ENTRYPOINT [ "node", "zeitservice" ]
+ENTRYPOINT [ "node", "app" ]
 
 
 
